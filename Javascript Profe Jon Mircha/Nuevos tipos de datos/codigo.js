@@ -98,4 +98,11 @@ michael.nombre = "Michael";
 michael.apellido = "Gonzalez";
 michael.edad = 24;
 
-console.log(michael);
+const juan = new Proxy(persona,manejador);
+michael.nombre = "Juan";
+michael.apellido = "Gonzalez";
+michael.edad = 20;
+
+//console.log(persona.nombre);
+
+//console.log(this);

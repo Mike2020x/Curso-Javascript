@@ -353,17 +353,13 @@ console.log(expReg2.exec(cadena));*/
 
 //Funciones Anonimas Autoejecutables-----------------------------------------------------
 (function () {
-console.log("Mi Primer IIFE");
+  console.log("Mi Primer IIFE");
 })();
 
-(function (d,w,c) {
+(function (d, w, c) {
   console.log("Mi Segunda IIFE");
   console.log(d);
   console.log(w);
   console.log(c);
   c.log("este es um console.log");
-})(document,window,console);
-
-
-
-
+})(document, window, console);
