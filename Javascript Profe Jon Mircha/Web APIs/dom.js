@@ -386,12 +386,14 @@ $linkEventos.addEventListener("click", (e) => {
 });
 //********************* */
 
-window.addEventListener("resize",(e)=>{
-console.clear();
-console.log("***Evento Resize***");
-console.log(window.innerWidth);
-console.log(window.innerHeight);
-console.log(window.outerWidth);
-console.log(window.outerHeight);
-console.log(e);
+window.addEventListener("resize", (e) => {
+  console.clear();
+  console.log("***Evento Resize***");
+  console.log(window.innerWidth);
+  console.log(window.innerHeight);
+  console.log(window.outerWidth);
+  console.log(window.outerHeight);
+  console.log(window.scrollX);
+  console.log(window.scrollY);
+  console.log(e);
 });
