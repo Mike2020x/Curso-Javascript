@@ -723,32 +723,35 @@ class Pelicula {
 peli.fichaTecnica();*/
 
 const misPelis = [
-  {id: "tt0111161",
-  titulo: "El señor de los anillos",
-  director: "Peter Jackson",
-  año: 2001,
-  paises: ["España", "EEUU"],
-  generos: ["Fantasy", "Adventure"],
-  calificacion: 7.29
-},
+  {
+    id: "tt0111161",
+    titulo: "El señor de los anillos",
+    director: "Peter Jackson",
+    año: 2001,
+    paises: ["España", "EEUU"],
+    generos: ["Fantasy", "Adventure"],
+    calificacion: 7.29,
+  },
 
-  {id: "tt0111161",
-  titulo: "Mision Imposible",
-  director: "Peter Jackson",
-  año: 1997,
-  paises: ["España", "EEUU"],
-  generos: ["Fantasy", "Adventure"],
-  calificacion: 4.89
-},
+  {
+    id: "tt0111161",
+    titulo: "Mision Imposible",
+    director: "Peter Jackson",
+    año: 1997,
+    paises: ["España", "EEUU"],
+    generos: ["Fantasy", "Adventure"],
+    calificacion: 4.89,
+  },
 
-  {id: "tt0111161",
-  titulo: "Avengers Endgame",
-  director: "Peter Jackson",
-  año: 2020,
-  paises: ["España", "EEUU"],
-  generos: ["Fantasy", "Adventure"],
-  calificacion: 8.25
-}
-]
+  {
+    id: "tt0111161",
+    titulo: "Avengers Endgame",
+    director: "Peter Jackson",
+    año: 2020,
+    paises: ["España", "EEUU"],
+    generos: ["Fantasy", "Adventure"],
+    calificacion: 8.25,
+  },
+];
 
 //misPelis.forEach(el => new Pelicula(el).fichaTecnica())
