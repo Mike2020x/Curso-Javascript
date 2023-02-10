@@ -6,12 +6,17 @@ import webCam from "./deteccion_webcam.js";
 import searchFilters from "./filtro_busqueda.js";
 import getGeolocation from "./geolocalizacion.js";
 import hamburgerMenu from "./menu_hamburguesa.js";
+import speechReader from "./narrador.js";
 import responsiveMedia from "./objeto_responsive.js";
 import responsiveTester from "./prueba_responsive.js";
 import { digitalClock, alarm } from "./reloj.js";
-import sorteo_digital from "./sorteo_digital.js";
+import scrollSpy from "./scroll_espia.js";
+import slider from "./slider.js";
+import draw from "./sorteo.js";
 import { moveBall, shortcuts } from "./teclado.js";
 import darkTheme from "./tema_oscuro.js";
+import contactFormValidations from "./validaciones_formulario.js";
+import smartVideo from "./video_inteligente.js";
 
 const d = document;
 
@@ -39,7 +44,11 @@ d.addEventListener("DOMContentLoaded", (e) => {
   webCam("webcam");
   getGeolocation("geolocation");
   searchFilters(".card-filter", ".card");
-  sorteo_digital();
+  draw("#winner-btn", ".player");
+  slider();
+  scrollSpy();
+  smartVideo();
+  contactFormValidations();
 });
 
 d.addEventListener("keydown", (e) => {
@@ -49,3 +58,4 @@ d.addEventListener("keydown", (e) => {
 
 darkTheme(".dark-theme-btn", "dark-mode");
 networkStatus();
+speechReader();
