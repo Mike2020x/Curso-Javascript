@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selects Anidados</title>
+</head>
+
+<body>
+    <h1>Select Anidados</h1>
+    <h2>Colombia</h2>
+    <label for="select-primary">Departamentos</label>
+    <select name="primary" id="select-primary">
+        <option value="">Elige un Departamento</option>
+    </select>
+    <p></p>
+    <label for="select-secondary">Municipios</label>
+    <select name="secondary" id="select-secondary">
+        <option value="">Elige un Municipio</option>
+    </select>
+    <p></p>
+    <script>
+        const d = document,
+            $selectPrimary = d.getElementById("select-primary"),
+            $selectSecondary = d.getElementById("select-secondary");
+
+        function loadStates() {
+            fetch("https://www.datos.gov.co/resource/xdk5-pm3f.json")
+                .then(res => res.ok ? res.json() : Promise.reject(res))
+                .then(json => {
+                    console.log(json);
+                    let $options = `<option value="">Elige un Departamento</option>`;
+                    json.departamento.forEach(el => $options += `<option value="${el}">${el}</option>`);
+                    $selectPrimary.innerHTML = $options;
+                })
+                .catch(err => {
+                    console.log(err);
+                    let message = err.statusText || "Ocurrio un error";
+                    $selectPrimary.nextElementSibling.innerHTML = `Error ${err.status}:${message}`
+                })
+        }
+        function loadTowns(state) {
+            let
+        }
+        d.addEventListener("DOMContentLoaded", loadStates);
+        $selectPrimary.addEventListener("change", (e) => loadTowns(e.target.value));
+
+    </script>
+</body>
+
+</html>
