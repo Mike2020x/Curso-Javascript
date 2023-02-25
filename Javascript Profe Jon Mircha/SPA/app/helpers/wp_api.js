@@ -2,10 +2,12 @@ const NAME = "css-tricks",
   DOMAIN = `https://${NAME}.com`,
   SITE = `${DOMAIN}/wp-json`,
   API_WP = `${SITE}/wp/v2`,
-  POSTS = `${API_WP}/posts?_embed`,
-  POST = `${API_WP}/post`,
-  SEARCH = `${API_WP}/search?_embed&search=`,
-  CATEGORIES = `${API_WP}/categories`;
+  PER_PAGE = 9,
+  POSTS = `${API_WP}/posts?_embed&per_page=${PER_PAGE}`,
+  POST = `${API_WP}/posts`,
+  SEARCH = `${API_WP}/search?_embed&per_page=${PER_PAGE}&search=`;
+
+let page = 1;
 
 export default {
   NAME,
@@ -13,7 +15,8 @@ export default {
   SITE,
   API_WP,
   POSTS,
+  PER_PAGE,
   POST,
   SEARCH,
-  CATEGORIES,
+  page,
 };

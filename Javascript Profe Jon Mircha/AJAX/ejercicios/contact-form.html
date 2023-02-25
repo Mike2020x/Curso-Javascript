@@ -205,8 +205,8 @@
                     .catch(err => {
                         console.log(err);
                         let message = err.statusText || "Ocurrio un error";
-                        $response.innerHTML = `Error ${err.status}:${messa  ge
-                    }`;
+                        $response.innerHTML = `Error ${err.status}:${message
+                            }`;
                     })
                     .finally(() => setTimeout(() => {
                         $response.classList.add("none");

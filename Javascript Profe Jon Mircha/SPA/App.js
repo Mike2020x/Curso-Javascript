@@ -1,22 +1,16 @@
-import api from "./app/helpers/wp_api.js";
-import { ajax } from "./app/helpers/ajax.js";
+import { Header } from "./app/components/Header.js";
+import { Loader } from "./app/components/Loader.js";
+import { Main } from "./app/components/Main.js";
+import { Router } from "./app/components/Router.js";
+import { InfiniteScroll } from "./app/helpers/infinite_scroll.js";
 
 export function App() {
-  document.getElementById(
-    "root"
-  ).innerHTML = `<h1>Bienvenidos a mi primer SPA con Vanilla JS</h1>`;
+  const $root = document.getElementById("root");
+  $root.innerHTML = null;
+  $root.appendChild(Header());
+  $root.appendChild(Main());
+  $root.appendChild(Loader());
 
-  console.log(api);
-
-  ajax({
-    url: api.POSTS,
-    cbSuccess: (posts) => {
-      console.log(posts);
-    },
-  });
-
-  ajax({
-    url: api.CATEGORIES,
-    cbSuccess: (categories) => console.log(categories),
-  });
+  Router();
+  InfiniteScroll();
 }
